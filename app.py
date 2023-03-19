@@ -13,8 +13,17 @@ install_and_import('joblib')
 install_and_import('pandas')
 install_and_import('numpy')
 install_and_import('streamlit')
-install_and_import('sklearn==1.2.2')
+
 install_and_import('streamlit')
+
+import sys
+import subprocess
+
+# implement pip as a subprocess:
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'sklearn==1.2.2'])
+
+
 import os
 import joblib
 import pandas as pd
