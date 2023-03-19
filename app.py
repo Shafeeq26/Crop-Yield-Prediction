@@ -9,19 +9,14 @@ def install_and_import(package):
         globals()[package] = importlib.import_module(package)
 
 
-install_and_import('joblib')
-install_and_import('pandas')
-install_and_import('numpy')
-install_and_import('streamlit')
-install_and_import('scikit-plot')
+
 import os
 import joblib
 import pandas as pd
 import numpy as np
 import streamlit as st
-import numpy as np
-import sklearn
-import streamlit
+import scikit-learn as sklearn
+
 df = pd.read_csv('crop_production.csv')
 df2 = pd.read_csv('crop_yield.csv')
 grouped = df.groupby('State_Name')['District_Name']

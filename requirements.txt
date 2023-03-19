@@ -1,2 +1,5 @@
 scikit-learn==1.2.2
-scikit-plot
+joblib
+pandas
+numpy
+streamlit
