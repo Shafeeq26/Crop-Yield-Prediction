@@ -96,7 +96,7 @@ if choice == 'Crop Yield Prediction':
         pred1 = crop_yield_pred1(data)
         data2 = [Crop_Year,Season,crop,area,temp,wind_speed,pressure,humidity,soil_type,N,P,K]
         pred2 = crop_yield_pred2(data2)
-        pres='The Predicted Crop Yield for the given Input Parameters and area is /n'
+        pres='The Predicted Crop Yield for the given Input Parameters and area is \n'
         ton=' Tons'
         ans=pres + str((pred1+pred2)/2) + ton
         st.text(ans)
