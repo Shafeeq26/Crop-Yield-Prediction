@@ -22,7 +22,6 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import numpy as np
-import scikit-learn
 import sklearn
 import streamlit
 df = pd.read_csv('crop_production.csv')
