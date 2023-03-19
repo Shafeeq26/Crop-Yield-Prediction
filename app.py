@@ -13,7 +13,6 @@ install_and_import('joblib')
 install_and_import('pandas')
 install_and_import('numpy')
 install_and_import('streamlit')
-install_and_import('scikit-learn')
 install_and_import('sklearn')
 install_and_import('streamlit')
 import os
