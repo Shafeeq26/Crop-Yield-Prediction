@@ -122,7 +122,7 @@ elif choice == 'Crop Recommendation':
         data = [N,P,K,temp,hum,ph,rainfall]
         data = [float(i) for i in data]
         pred = crop_prediction(data)
-        st.markdown(f"The Recommended Crops for Given Conditions are:\n {pred}")
+        st.text(f"The Recommended Crops for Given Conditions are:\n {pred}")
 else:
     st.title('Fertilizer Prediction Model')
     st.image('fertilizers.jpg')
@@ -145,4 +145,4 @@ else:
     if predict:
         data = [temp,hum,moist,soil_type,crop_type,N,Pt,Phs]
         pred = fert_prediction(data)
-        st.text(f"The Recommended NPK content for Fertilizers for the given condition is\n : {pred}")
+        st.text(f"The Recommended NPK content for Fertilizers for the given condition is:\n {pred}")
