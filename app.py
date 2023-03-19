@@ -1,3 +1,8 @@
+!pip install joblib
+!pip install pandas
+!pip install streamlit
+!pip install numpy
+
 import os
 import joblib
 import pandas as pd
