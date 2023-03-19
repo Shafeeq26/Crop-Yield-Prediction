@@ -15,13 +15,16 @@ install_and_import('numpy')
 install_and_import('streamlit')
 install_and_import('scikit-learn')
 install_and_import('sklearn')
-
+install_and_import('streamlit')
 import os
 import joblib
 import pandas as pd
 import numpy as np
 import streamlit as st
 import numpy as np
+import scikit-learn
+import sklearn
+import streamlit
 df = pd.read_csv('crop_production.csv')
 df2 = pd.read_csv('crop_yield.csv')
 grouped = df.groupby('State_Name')['District_Name']
