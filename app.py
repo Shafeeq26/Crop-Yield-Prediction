@@ -1,14 +1,20 @@
-pip install joblib
-pip install pandas
-pip install streamlit
-pip install numpy
+def install_and_import(package):
+    import importlib
+    try:
+        importlib.import_module(package)
+    except ImportError:
+        import pip
+        pip.main(['install', package])
+    finally:
+        globals()[package] = importlib.import_module(package)
 
-import os
-import joblib
-import pandas as pd
-import numpy as np
-import streamlit as st
-import numpy as np
+
+install_and_import('joblib')
+install_and_import('pandas')
+install_and_import('numpy')
+install_and_import('streamlit')
+
+
 df = pd.read_csv('crop_production.csv')
 df2 = pd.read_csv('crop_yield.csv')
 grouped = df.groupby('State_Name')['District_Name']
