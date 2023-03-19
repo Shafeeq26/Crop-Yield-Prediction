@@ -145,4 +145,4 @@ else:
     if predict:
         data = [temp,hum,moist,soil_type,crop_type,N,Pt,Phs]
         pred = fert_prediction(data)
-        st.markdown(f"The Recommended NPK content for Fertilizers for the given condition is\n : {pred}")
+        st.text(f"The Recommended NPK content for Fertilizers for the given condition is\n : {pred}")
