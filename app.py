@@ -13,9 +13,7 @@ install_and_import('joblib')
 install_and_import('pandas')
 install_and_import('numpy')
 install_and_import('streamlit')
-
-
-install_and_import('streamlit')
+install_and_import('scikit-plot')
 import os
 import joblib
 import pandas as pd
