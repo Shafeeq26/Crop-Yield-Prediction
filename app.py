@@ -61,7 +61,7 @@ def crop_yield_pred2(data):
     return pred[0]
 st.set_page_config(
         page_title="Crop Yield Prediction",
-        page_icon='crop.jpg'
+        page_icon='crop_yield.jpg'
         
 )   
 hide_streamlit_style = """
