@@ -59,13 +59,18 @@ def crop_yield_pred2(data):
     df = pd.DataFrame(data=[data],columns=crop_yield_col2)
     pred = crop_yield_model2.predict(df)
     return pred[0]
-    
-
 st.set_page_config(
         page_title="Crop Yield Prediction",
         page_icon='crop.jpg'
         
-)
+)   
+hide_streamlit_style = """
+            <style>
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
 st.sidebar.title("Crop Yield Prediction Application")
 choice = st.sidebar.radio(label = 'Select option',options = ['Crop Yield Prediction','Crop Recommendation','Fertilizers Prediction'])
 if choice == 'Crop Yield Prediction':
@@ -99,7 +104,7 @@ if choice == 'Crop Yield Prediction':
         pres='The Predicted Crop Yield for the given Input Parameters and Area is \n'
         ton=' Tons'
         ans=pres + str((pred1+pred2)/2) + ton
-        st.text(ans)
+        st.subheader(ans)
  
         
 
@@ -122,7 +127,7 @@ elif choice == 'Crop Recommendation':
         data = [N,P,K,temp,hum,ph,rainfall]
         data = [float(i) for i in data]
         pred = crop_prediction(data)
-        st.text(f"The Recommended Crops for Given Conditions are:\n {pred}")
+        st.subheader(f"The Recommended Crops for Given Conditions are:\n {pred}")
 else:
     st.title('Fertilizer Prediction Model')
     st.image('fertilizers.jpg')
@@ -145,4 +150,4 @@ else:
     if predict:
         data = [temp,hum,moist,soil_type,crop_type,N,Pt,Phs]
         pred = fert_prediction(data)
-        st.text(f"The Recommended NPK content for Fertilizers for the given condition is:\n {pred}")
+        st.subheader(f"The Recommended NPK content for Fertilizers for the given condition is:\n {pred}")
