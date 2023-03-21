@@ -100,15 +100,18 @@ if lang == 'English':
 
         predict = st.button("Predict")
         if predict:
-            data = [state,district,Crop_Year,Season,crop,area]
-            pred1 = crop_yield_pred1(data)
-            data2 = [Crop_Year,Season,crop,area,temp,wind_speed,pressure,humidity,soil_type,N,P,K]
-            pred2 = crop_yield_pred2(data2)
-            pres='The Predicted Crop Yield for the given Input Parameters and Area is \n'
-            ton=' Tons'
-            ans=pres + str((pred1+pred2)/2) + ton
-            st.subheader(ans)
-     
+            if area==0:
+                st.subheader("Area cannot be zero")
+            else:
+                data = [state,district,Crop_Year,Season,crop,area]
+                pred1 = crop_yield_pred1(data)
+                data2 = [Crop_Year,Season,crop,area,temp,wind_speed,pressure,humidity,soil_type,N,P,K]
+                pred2 = crop_yield_pred2(data2)
+                pres='The Predicted Crop Yield for the given Input Parameters and Area is \n'
+                ton=' Tons'
+                ans=pres + str((pred1+pred2)/2) + ton
+                st.subheader(ans)
+         
         
 
     elif choice == 'Crop Recommendation':
@@ -183,14 +186,17 @@ elif lang == 'தமிழ்':
 
         predict = st.button("கணிக்கவும்")
         if predict:
-            data = [state,district,Crop_Year,Season,crop,area]
-            pred1 = crop_yield_pred1(data)
-            data2 = [Crop_Year,Season,crop,area,temp,wind_speed,pressure,humidity,soil_type,N,P,K]
-            pred2 = crop_yield_pred2(data2)
-            pres='கொடுக்கப்பட்ட உள்ளீட்டு அளவுருக்கள் மற்றும் பகுதிக்கான கணிக்கப்பட்ட பயிர் விளைச்சல்\n'
-            ton=' டன்கள்'
-            ans=pres + str((pred1+pred2)/2) + ton
-            st.subheader(ans)
+            if area==0:
+                st.subheader("சரியான பகுதி மதிப்பை உள்ளிடவும்")
+            else:
+                data = [state,district,Crop_Year,Season,crop,area]
+                pred1 = crop_yield_pred1(data)
+                data2 = [Crop_Year,Season,crop,area,temp,wind_speed,pressure,humidity,soil_type,N,P,K]
+                pred2 = crop_yield_pred2(data2)
+                pres='கொடுக்கப்பட்ட உள்ளீட்டு அளவுருக்கள் மற்றும் பகுதிக்கான கணிக்கப்பட்ட பயிர் விளைச்சல்\n'
+                ton=' டன்கள்'
+                ans=pres + str((pred1+pred2)/2) + ton
+                st.subheader(ans)
      
             
 
